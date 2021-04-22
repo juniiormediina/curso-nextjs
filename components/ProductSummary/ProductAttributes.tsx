@@ -1,12 +1,9 @@
-import React from 'react'
-import { Header, Divider, Table } from 'semantic-ui-react'
+import React from 'react';
+import { Header, Divider, Table } from 'semantic-ui-react';
 
-const ProductAttributes = ({
-  description,
-  ...otherAttributes
-}: TProductAttributes) => (
-  <section className="container">
-    <Header as="h3">About this avocado</Header>
+const ProductAttributes = ({ description, ...otherAttributes }: TProductAttributes) => (
+  <section className='container'>
+    <Header as='h3'>About this avocado</Header>
     <p>{description}</p>
 
     <Divider />
@@ -14,17 +11,15 @@ const ProductAttributes = ({
     <Table celled>
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell colSpan="2">Attributes</Table.HeaderCell>
+          <Table.HeaderCell colSpan='2'>Attributes</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
       <Table.Body>
         {Object.keys(otherAttributes).map((key) => (
           <Table.Row key={key}>
-            <Table.Cell className="attr-name">{key}</Table.Cell>
-            <Table.Cell>
-              {otherAttributes[key as keyof typeof otherAttributes]}
-            </Table.Cell>
+            <Table.Cell className='attr-name'>{key}</Table.Cell>
+            <Table.Cell>{otherAttributes[key as keyof typeof otherAttributes]}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
@@ -36,6 +31,6 @@ const ProductAttributes = ({
       }
     `}</style>
   </section>
-)
+);
 
-export default ProductAttributes
+export default ProductAttributes;

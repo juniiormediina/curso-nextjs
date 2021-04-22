@@ -1,22 +1,22 @@
-import React from 'react'
-import { Item, Label } from 'semantic-ui-react'
+import React from 'react';
+import { Item, Label } from 'semantic-ui-react';
 
-import AddToCart from './AddToCart'
-import ProductAttributes from './ProductAttributes'
+import AddToCart from './AddToCart';
+import ProductAttributes from './ProductAttributes';
 
 type ProductSummaryProps = {
-  product: TProduct
-}
+  product: TProduct;
+};
 
 const ProductSummary = ({ product }: ProductSummaryProps) => (
   <>
-    <Item.Group as="section">
+    <Item.Group as='section'>
       <Item style={{ alignItems: 'center' }}>
-        <Item.Image size="medium">
+        <Item.Image size='medium'>
           <img src={product.image} alt={product.name} />
         </Item.Image>
         <Item.Content>
-          <Item.Header as="h1">{product.name}</Item.Header>
+          <Item.Header as='h1'>{product.name}</Item.Header>
           <Item.Description>
             <p>{product.price}</p>
             <Label>{`SKU: ${product.sku}`}</Label>
@@ -29,6 +29,6 @@ const ProductSummary = ({ product }: ProductSummaryProps) => (
     </Item.Group>
     <ProductAttributes {...product.attributes} />
   </>
-)
+);
 
-export default ProductSummary
+export default ProductSummary;

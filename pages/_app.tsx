@@ -1,8 +1,8 @@
-import { AppProps } from 'next/app'
-import 'semantic-ui-css/semantic.min.css'
-import '../global.css'
+import { AppProps } from 'next/app';
+import 'semantic-ui-css/semantic.min.css';
+import '../global.css';
 
-import CartProvider from '@store/Cart'
+import CartProvider from '@store/Cart';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   // Aditional props
@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <CartProvider>
       <Component {...pageProps} />
     </CartProvider>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

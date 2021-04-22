@@ -1,6 +1,6 @@
-import React from 'react'
-import { Image, Header } from 'semantic-ui-react'
-import Layout from '@components/Layout/Layout'
+import React from 'react';
+import { Image, Header } from 'semantic-ui-react';
+import Layout from '@components/Layout/Layout';
 
 const avoFacts = [
   {
@@ -28,22 +28,22 @@ const avoFacts = [
     content:
       'Need to ripen that avocado ASAP? Place it in a brown paper bag with a banana or two. The bananas will release ethylene gas, a natural plant hormone that aids in ripening fruit. On the other hand, check out this guide to learn how to store them for later.',
   },
-]
+];
 
 const AboutPage = () => {
   return (
     <Layout>
       <section>
-        <Header as="h1" textAlign="center">
+        <Header as='h1' textAlign='center'>
           13 Surprising Facts About Avocados
         </Header>
         <figure>
-          <Image src="/images/avocados.jpg" alt="Avocados on a table" />
+          <Image src='/images/avocados.jpg' alt='Avocados on a table' />
           <figcaption>
             Originally from{' '}
             <a
-              target="_blank"
-              href="https://www.tasteofhome.com/article/13-surprising-facts-about-avocados/"
+              target='_blank'
+              href='https://www.tasteofhome.com/article/13-surprising-facts-about-avocados/'
             >
               Taste of Home
             </a>
@@ -52,7 +52,7 @@ const AboutPage = () => {
         <ol>
           {avoFacts.map(({ title, content }) => (
             <li key={title}>
-              <h3 className="ui header">{title}</h3>
+              <h3 className='ui header'>{title}</h3>
               <p>{content}</p>
             </li>
           ))}
@@ -113,7 +113,7 @@ const AboutPage = () => {
         }
       `}</style>
     </Layout>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

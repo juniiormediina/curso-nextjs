@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import { Confirm } from 'semantic-ui-react'
+import React, { useState, useEffect } from 'react';
+import { Confirm } from 'semantic-ui-react';
 
-import PuesVivo from './AnimatedHeader'
-import PuesMuero from './RottenHeader'
-import ModalHeaderContent from './ModalHeaderContent'
+import PuesVivo from './AnimatedHeader';
+import PuesMuero from './RottenHeader';
+import ModalHeaderContent from './ModalHeaderContent';
 
 const KawaiiHeader = () => {
-  const [visible, setVisible] = useState(true)
-  const [meMori, setMeMori] = useState(false)
-  const [modalOpen, setModalOpen] = useState(false)
-  const [count, setCount] = useState(0)
+  const [visible, setVisible] = useState(true);
+  const [meMori, setMeMori] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [count, setCount] = useState(0);
 
-  const closeModal = () => setModalOpen(false)
-  const toggleVisible = () => setVisible((prevVisible) => !prevVisible)
+  const closeModal = () => setModalOpen(false);
+  const toggleVisible = () => setVisible((prevVisible) => !prevVisible);
 
   useEffect(() => {
-    window.setTimeout(toggleVisible, 350)
-  }, [])
+    window.setTimeout(toggleVisible, 350);
+  }, []);
 
   useEffect(() => {
     if (count === 4) {
-      setMeMori(true)
-      setModalOpen(true)
+      setMeMori(true);
+      setModalOpen(true);
     }
-  }, [count])
+  }, [count]);
 
   return (
-    <div className="container">
+    <div className='container'>
       {meMori ? (
         <PuesMuero />
       ) : (
@@ -42,8 +42,8 @@ const KawaiiHeader = () => {
         content={ModalHeaderContent}
         onCancel={closeModal}
         onConfirm={closeModal}
-        cancelButton="Ay, lo siento"
-        confirmButton="OK"
+        cancelButton='Ay, lo siento'
+        confirmButton='OK'
         closeOnDimmerClick={false}
       />
 
@@ -60,7 +60,7 @@ const KawaiiHeader = () => {
         `}
       </style>
     </div>
-  )
-}
+  );
+};
 
-export default KawaiiHeader
+export default KawaiiHeader;

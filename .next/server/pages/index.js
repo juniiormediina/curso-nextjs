@@ -158,7 +158,7 @@ module.exports = require("isomorphic-unfetch");
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return /* binding */ getServerSideProps; });
+__webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return /* binding */ getStaticProps; });
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__("cDcd");
@@ -357,7 +357,20 @@ var pages_jsx = external_react_default.a.createElement;
 
 
 
-const getServerSideProps = async () => {
+/* Server side rendering */
+
+/* importante estos metodos solo los podemos utilizar en las paginas y no en los componentes */
+// export const getServerSideProps = async () => {
+//   const response = await fetch('https://curso-nextjs-qfvrx0rrk-juniiormediina.vercel.app/api/avo');
+//   const { data: productList }: TAPIAvoResponse = await response.json();
+//   return {
+//     props: {
+//       productList,
+//     },
+//   };
+// };
+
+const getStaticProps = async () => {
   const response = await external_isomorphic_unfetch_default()('https://curso-nextjs-qfvrx0rrk-juniiormediina.vercel.app/api/avo');
   const {
     data: productList

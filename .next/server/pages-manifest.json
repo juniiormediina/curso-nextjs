@@ -6,7 +6,7 @@
   "/api/avo": "pages/api/avo.js",
   "/cart": "pages/cart.html",
   "/": "pages/index.js",
-  "/product/[id]": "pages/product/[id].html",
+  "/product/[id]": "pages/product/[id].js",
   "/_error": "pages/_error.js",
   "/404": "pages/404.html"
 }

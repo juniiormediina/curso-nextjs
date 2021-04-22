@@ -1,7 +1,12 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
+  "/about": "pages/about.html",
+  "/api/avo/[id]": "pages/api/avo/[id].js",
+  "/api/avo": "pages/api/avo.js",
+  "/cart": "pages/cart.html",
+  "/": "pages/index.js",
+  "/product/[id]": "pages/product/[id].html",
   "/_error": "pages/_error.js",
-  "/product/[id]": "pages/product/[id].js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }

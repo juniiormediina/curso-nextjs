@@ -1,0 +1,31 @@
+{
+  "ast": null,
+  "code": "import corsWrapper from 'cors';\n\n/**\r\n * Hey there you curious :)\r\n *\r\n * By default, NextJS APIs are same-site origin only.\r\n * But since *I needed the main project*\r\n * to have public API access, I had to configure CORS.\r\n *\r\n * @see https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors\r\n * @see https://github.com/expressjs/cors#configuration-options\r\n */\nconst CORS_OPTIONS = {\n  methods: ['GET', 'OPTIONS']\n};\n\nfunction promisifyMiddleware(middleware) {\n  return (req, res) => new Promise((resolve, reject) => {\n    middleware(req, res, result => {\n      if (result instanceof Error) {\n        return reject(result);\n      }\n\n      return resolve(result);\n    });\n  });\n} // Initialize the cors middleware\n\n\nconst cors = promisifyMiddleware(corsWrapper(CORS_OPTIONS));\nexport default cors;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "C:/Users/junii/Documents/Challenges/curso-nextjs/cors-middleware.ts"
+    ],
+    "names": [
+      "corsWrapper",
+      "CORS_OPTIONS",
+      "methods",
+      "promisifyMiddleware",
+      "middleware",
+      "req",
+      "res",
+      "Promise",
+      "resolve",
+      "reject",
+      "result",
+      "Error",
+      "cors"
+    ],
+    "mappings": "AAAA,OAAOA,WAAP,MAAwB,MAAxB;;AAGA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,MAAMC,YAAY,GAAG;AACnBC,EAAAA,OAAO,EAAE,CAAC,KAAD,EAAQ,SAAR;AADU,CAArB;;AAIA,SAASC,mBAAT,CAA6BC,UAA7B,EAAyD;AACvD,SAAO,CAACC,GAAD,EAAWC,GAAX,KACL,IAAIC,OAAJ,CAAY,CAACC,OAAD,EAAUC,MAAV,KAAqB;AAC/BL,IAAAA,UAAU,CAACC,GAAD,EAAMC,GAAN,EAAYI,MAAD,IAA6B;AAChD,UAAIA,MAAM,YAAYC,KAAtB,EAA6B;AAC3B,eAAOF,MAAM,CAACC,MAAD,CAAb;AACD;;AACD,aAAOF,OAAO,CAACE,MAAD,CAAd;AACD,KALS,CAAV;AAMD,GAPD,CADF;AASD,C,CAED;;;AACA,MAAME,IAAI,GAAGT,mBAAmB,CAACH,WAAW,CAACC,YAAD,CAAZ,CAAhC;AAEA,eAAeW,IAAf",
+    "sourcesContent": [
+      "import corsWrapper from 'cors'\r\nimport { RequestHandler } from 'express'\r\n\r\n/**\r\n * Hey there you curious :)\r\n *\r\n * By default, NextJS APIs are same-site origin only.\r\n * But since *I needed the main project*\r\n * to have public API access, I had to configure CORS.\r\n *\r\n * @see https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors\r\n * @see https://github.com/expressjs/cors#configuration-options\r\n */\r\nconst CORS_OPTIONS = {\r\n  methods: ['GET', 'OPTIONS'],\r\n}\r\n\r\nfunction promisifyMiddleware(middleware: RequestHandler) {\r\n  return (req: any, res: any) =>\r\n    new Promise((resolve, reject) => {\r\n      middleware(req, res, (result: Error | unknown) => {\r\n        if (result instanceof Error) {\r\n          return reject(result)\r\n        }\r\n        return resolve(result)\r\n      })\r\n    })\r\n}\r\n\r\n// Initialize the cors middleware\r\nconst cors = promisifyMiddleware(corsWrapper(CORS_OPTIONS))\r\n\r\nexport default cors\r\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

@@ -1,0 +1,17 @@
+{
+  "ast": null,
+  "code": "var _this = this,\n    _jsxFileName = \"C:\\\\Users\\\\junii\\\\Documents\\\\Challenges\\\\curso-nextjs\\\\components\\\\KawaiiHeader\\\\RottenHeader.tsx\";\n\nvar __jsx = React.createElement;\nimport React from 'react';\nimport { Header } from 'semantic-ui-react';\nimport { PosMeMuero } from '@components/SVGIcons';\n\nvar RottenHeader = function RottenHeader() {\n  return __jsx(Header, {\n    size: \"huge\",\n    as: \"h1\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 7,\n      columnNumber: 3\n    }\n  }, \"Platzi\", __jsx(PosMeMuero, {\n    size: \"58px\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 9,\n      columnNumber: 5\n    }\n  }), \"Avo\");\n};\n\n_c = RottenHeader;\nexport default RottenHeader;\n\nvar _c;\n\n$RefreshReg$(_c, \"RottenHeader\");",
+  "map": {
+    "version": 3,
+    "sources": [
+      "C:/Users/junii/Documents/Challenges/curso-nextjs/components/KawaiiHeader/RottenHeader.tsx"
+    ],
+    "names": ["React", "Header", "PosMeMuero", "RottenHeader"],
+    "mappings": ";;;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,SAASC,MAAT,QAA4C,mBAA5C;AAEA,SAASC,UAAT,QAA2B,sBAA3B;;AAEA,IAAMC,YAAY,GAAG,SAAfA,YAAe;AAAA,SACnB,MAAC,MAAD;AAAQ,IAAA,IAAI,EAAC,MAAb;AAAoB,IAAA,EAAE,EAAC,IAAvB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,eAEE,MAAC,UAAD;AAAY,IAAA,IAAI,EAAC,MAAjB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAFF,QADmB;AAAA,CAArB;;KAAMA,Y;AAQN,eAAeA,YAAf",
+    "sourcesContent": [
+      "import React from 'react'\r\nimport { Header, Transition, Confirm } from 'semantic-ui-react'\r\n\r\nimport { PosMeMuero } from '@components/SVGIcons'\r\n\r\nconst RottenHeader = () => (\r\n  <Header size=\"huge\" as=\"h1\">\r\n    Platzi\r\n    <PosMeMuero size=\"58px\" />\r\n    Avo\r\n  </Header>\r\n)\r\n\r\nexport default RottenHeader\r\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

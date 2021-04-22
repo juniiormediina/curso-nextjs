@@ -1,0 +1,26 @@
+{
+  "ast": null,
+  "code": "var _this = this,\n    _jsxFileName = \"C:\\\\Users\\\\junii\\\\Documents\\\\Challenges\\\\curso-nextjs\\\\components\\\\KawaiiHeader\\\\AnimatedHeader.tsx\";\n\nvar __jsx = React.createElement;\nimport React from 'react';\nimport { Header, Transition } from 'semantic-ui-react';\nimport { Avocado } from '@components/SVGIcons';\n\nvar AnimatedHeader = function AnimatedHeader(_ref) {\n  var visible = _ref.visible,\n      onClick = _ref.onClick,\n      onComplete = _ref.onComplete;\n  return __jsx(Header, {\n    size: \"huge\",\n    as: \"h1\",\n    onClick: onClick,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 17,\n      columnNumber: 3\n    }\n  }, \"Platzi\", __jsx(Transition, {\n    animation: \"jiggle\",\n    visible: visible,\n    duration: 900,\n    onComplete: onComplete,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 19,\n      columnNumber: 5\n    }\n  }, __jsx(Avocado, {\n    size: \"58px\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 25,\n      columnNumber: 7\n    }\n  })), \"Avo\");\n};\n\n_c = AnimatedHeader;\nexport default AnimatedHeader;\n\nvar _c;\n\n$RefreshReg$(_c, \"AnimatedHeader\");",
+  "map": {
+    "version": 3,
+    "sources": [
+      "C:/Users/junii/Documents/Challenges/curso-nextjs/components/KawaiiHeader/AnimatedHeader.tsx"
+    ],
+    "names": [
+      "React",
+      "Header",
+      "Transition",
+      "Avocado",
+      "AnimatedHeader",
+      "visible",
+      "onClick",
+      "onComplete"
+    ],
+    "mappings": ";;;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,SAASC,MAAT,EAAiBC,UAAjB,QAAmC,mBAAnC;AAEA,SAASC,OAAT,QAAwB,sBAAxB;;AAQA,IAAMC,cAAc,GAAG,SAAjBA,cAAiB;AAAA,MACrBC,OADqB,QACrBA,OADqB;AAAA,MAErBC,OAFqB,QAErBA,OAFqB;AAAA,MAGrBC,UAHqB,QAGrBA,UAHqB;AAAA,SAKrB,MAAC,MAAD;AAAQ,IAAA,IAAI,EAAC,MAAb;AAAoB,IAAA,EAAE,EAAC,IAAvB;AAA4B,IAAA,OAAO,EAAED,OAArC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,eAEE,MAAC,UAAD;AACE,IAAA,SAAS,EAAC,QADZ;AAEE,IAAA,OAAO,EAAED,OAFX;AAGE,IAAA,QAAQ,EAAE,GAHZ;AAIE,IAAA,UAAU,EAAEE,UAJd;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAME,MAAC,OAAD;AAAS,IAAA,IAAI,EAAC,MAAd;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IANF,CAFF,QALqB;AAAA,CAAvB;;KAAMH,c;AAmBN,eAAeA,cAAf",
+    "sourcesContent": [
+      "import React from 'react'\r\nimport { Header, Transition } from 'semantic-ui-react'\r\n\r\nimport { Avocado } from '@components/SVGIcons'\r\n\r\ntype AnimatedHeaderProps = {\r\n  visible: boolean\r\n  onClick: () => void\r\n  onComplete: () => void\r\n}\r\n\r\nconst AnimatedHeader = ({\r\n  visible,\r\n  onClick,\r\n  onComplete,\r\n}: AnimatedHeaderProps) => (\r\n  <Header size=\"huge\" as=\"h1\" onClick={onClick}>\r\n    Platzi\r\n    <Transition\r\n      animation=\"jiggle\"\r\n      visible={visible}\r\n      duration={900}\r\n      onComplete={onComplete}\r\n    >\r\n      <Avocado size=\"58px\" />\r\n    </Transition>\r\n    Avo\r\n  </Header>\r\n)\r\n\r\nexport default AnimatedHeader\r\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

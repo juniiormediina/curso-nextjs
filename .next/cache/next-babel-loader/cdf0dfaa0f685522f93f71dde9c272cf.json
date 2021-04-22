@@ -1,0 +1,30 @@
+{
+  "ast": null,
+  "code": "var _this = this,\n    _jsxFileName = \"C:\\\\Users\\\\junii\\\\Documents\\\\Challenges\\\\curso-nextjs\\\\components\\\\ProductList\\\\ProductList.tsx\";\n\nvar __jsx = React.createElement;\nimport React from 'react';\nimport { Card } from 'semantic-ui-react';\nimport Link from 'next/link';\n\nvar mapProductsToCards = function mapProductsToCards(products) {\n  return products.map(function (_ref) {\n    var name = _ref.name,\n        id = _ref.id,\n        price = _ref.price,\n        image = _ref.image;\n    return __jsx(Link, {\n      key: id,\n      href: \"/product/[id]\",\n      as: \"/product/\".concat(id),\n      passHref: true,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 11,\n        columnNumber: 5\n      }\n    }, __jsx(Card, {\n      as: \"a\",\n      header: name,\n      image: image,\n      meta: __jsx(Card.Meta, {\n        style: {\n          color: 'dimgray'\n        },\n        __self: _this,\n        __source: {\n          fileName: _jsxFileName,\n          lineNumber: 16,\n          columnNumber: 15\n        }\n      }, price),\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 12,\n        columnNumber: 7\n      }\n    }));\n  });\n};\n\nvar ProductList = function ProductList(_ref2) {\n  var products = _ref2.products;\n  return __jsx(Card.Group, {\n    itemsPerRow: 2,\n    stackable: true,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 22,\n      columnNumber: 3\n    }\n  }, mapProductsToCards(products));\n};\n\n_c = ProductList;\nexport default ProductList;\n\nvar _c;\n\n$RefreshReg$(_c, \"ProductList\");",
+  "map": {
+    "version": 3,
+    "sources": [
+      "C:/Users/junii/Documents/Challenges/curso-nextjs/components/ProductList/ProductList.tsx"
+    ],
+    "names": [
+      "React",
+      "Card",
+      "Link",
+      "mapProductsToCards",
+      "products",
+      "map",
+      "name",
+      "id",
+      "price",
+      "image",
+      "color",
+      "ProductList"
+    ],
+    "mappings": ";;;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,SAASC,IAAT,QAAqB,mBAArB;AACA,OAAOC,IAAP,MAAiB,WAAjB;;AAMA,IAAMC,kBAAkB,GAAG,SAArBA,kBAAqB,CAACC,QAAD;AAAA,SACzBA,QAAQ,CAACC,GAAT,CAAa;AAAA,QAAGC,IAAH,QAAGA,IAAH;AAAA,QAASC,EAAT,QAASA,EAAT;AAAA,QAAaC,KAAb,QAAaA,KAAb;AAAA,QAAoBC,KAApB,QAAoBA,KAApB;AAAA,WACX,MAAC,IAAD;AAAM,MAAA,GAAG,EAAEF,EAAX;AAAe,MAAA,IAAI,EAAC,eAApB;AAAoC,MAAA,EAAE,qBAAcA,EAAd,CAAtC;AAA0D,MAAA,QAAQ,MAAlE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OACE,MAAC,IAAD;AACE,MAAA,EAAE,EAAC,GADL;AAEE,MAAA,MAAM,EAAED,IAFV;AAGE,MAAA,KAAK,EAAEG,KAHT;AAIE,MAAA,IAAI,EAAE,MAAC,IAAD,CAAM,IAAN;AAAW,QAAA,KAAK,EAAE;AAAEC,UAAAA,KAAK,EAAE;AAAT,SAAlB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,SAAyCF,KAAzC,CAJR;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MADF,CADW;AAAA,GAAb,CADyB;AAAA,CAA3B;;AAYA,IAAMG,WAAW,GAAG,SAAdA,WAAc;AAAA,MAAGP,QAAH,SAAGA,QAAH;AAAA,SAClB,MAAC,IAAD,CAAM,KAAN;AAAY,IAAA,WAAW,EAAE,CAAzB;AAA4B,IAAA,SAAS,MAArC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACGD,kBAAkB,CAACC,QAAD,CADrB,CADkB;AAAA,CAApB;;KAAMO,W;AAMN,eAAeA,WAAf",
+    "sourcesContent": [
+      "import React from 'react'\r\nimport { Card } from 'semantic-ui-react'\r\nimport Link from 'next/link'\r\n\r\ntype ProductListProps = {\r\n  products: TProduct[]\r\n}\r\n\r\nconst mapProductsToCards = (products: TProduct[]) =>\r\n  products.map(({ name, id, price, image }) => (\r\n    <Link key={id} href=\"/product/[id]\" as={`/product/${id}`} passHref>\r\n      <Card\r\n        as=\"a\"\r\n        header={name}\r\n        image={image}\r\n        meta={<Card.Meta style={{ color: 'dimgray' }}>{price}</Card.Meta>}\r\n      />\r\n    </Link>\r\n  ))\r\n\r\nconst ProductList = ({ products }: ProductListProps) => (\r\n  <Card.Group itemsPerRow={2} stackable>\r\n    {mapProductsToCards(products)}\r\n  </Card.Group>\r\n)\r\n\r\nexport default ProductList\r\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

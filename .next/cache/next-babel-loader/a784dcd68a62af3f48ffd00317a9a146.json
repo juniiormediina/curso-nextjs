@@ -1,0 +1,37 @@
+{
+  "ast": null,
+  "code": "import DB from '@database';\nimport enablePublicAccess from '@cors';\n\nconst allAvos = async (req, res) => {\n  try {\n    // Generally, you would not want this in your apps.\n    // See more in 'cors.js'\n    await enablePublicAccess(req, res);\n    const db = new DB();\n    const allEntries = await db.getAll();\n    const lenght = allEntries.length; // Notice: We're manually setting the response object\n    // However Next.JS offers Express-like helpers :)\n    // https://nextjs.org/docs/api-routes/response-helpers\n\n    res.statusCode = 200;\n    res.setHeader('Content-Type', 'application/json');\n    res.end(JSON.stringify({\n      lenght,\n      data: allEntries\n    }));\n  } catch (e) {\n    console.error(e);\n    res.statusCode = 500;\n    res.end(JSON.stringify({\n      length: 0,\n      data: [],\n      error: 'Something went wrong'\n    }));\n  }\n};\n\nexport default allAvos;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "C:/Users/junii/Documents/Challenges/curso-nextjs/pages/api/avo/index.ts"
+    ],
+    "names": [
+      "DB",
+      "enablePublicAccess",
+      "allAvos",
+      "req",
+      "res",
+      "db",
+      "allEntries",
+      "getAll",
+      "lenght",
+      "length",
+      "statusCode",
+      "setHeader",
+      "end",
+      "JSON",
+      "stringify",
+      "data",
+      "e",
+      "console",
+      "error"
+    ],
+    "mappings": "AACA,OAAOA,EAAP,MAAe,WAAf;AACA,OAAOC,kBAAP,MAA+B,OAA/B;;AAEA,MAAMC,OAAO,GAAG,OAAOC,GAAP,EAA6BC,GAA7B,KAAqD;AACnE,MAAI;AACF;AACA;AACA,UAAMH,kBAAkB,CAACE,GAAD,EAAMC,GAAN,CAAxB;AAEA,UAAMC,EAAE,GAAG,IAAIL,EAAJ,EAAX;AACA,UAAMM,UAAU,GAAG,MAAMD,EAAE,CAACE,MAAH,EAAzB;AACA,UAAMC,MAAM,GAAGF,UAAU,CAACG,MAA1B,CAPE,CASF;AACA;AACA;;AACAL,IAAAA,GAAG,CAACM,UAAJ,GAAiB,GAAjB;AACAN,IAAAA,GAAG,CAACO,SAAJ,CAAc,cAAd,EAA8B,kBAA9B;AACAP,IAAAA,GAAG,CAACQ,GAAJ,CAAQC,IAAI,CAACC,SAAL,CAAe;AAAEN,MAAAA,MAAF;AAAUO,MAAAA,IAAI,EAAET;AAAhB,KAAf,CAAR;AACD,GAfD,CAeE,OAAOU,CAAP,EAAU;AACVC,IAAAA,OAAO,CAACC,KAAR,CAAcF,CAAd;AACAZ,IAAAA,GAAG,CAACM,UAAJ,GAAiB,GAAjB;AACAN,IAAAA,GAAG,CAACQ,GAAJ,CACEC,IAAI,CAACC,SAAL,CAAe;AAAEL,MAAAA,MAAM,EAAE,CAAV;AAAaM,MAAAA,IAAI,EAAE,EAAnB;AAAuBG,MAAAA,KAAK,EAAE;AAA9B,KAAf,CADF;AAGD;AACF,CAvBD;;AAyBA,eAAehB,OAAf",
+    "sourcesContent": [
+      "import { IncomingMessage, ServerResponse } from 'http'\r\nimport DB from '@database'\r\nimport enablePublicAccess from '@cors'\r\n\r\nconst allAvos = async (req: IncomingMessage, res: ServerResponse) => {\r\n  try {\r\n    // Generally, you would not want this in your apps.\r\n    // See more in 'cors.js'\r\n    await enablePublicAccess(req, res)\r\n\r\n    const db = new DB()\r\n    const allEntries = await db.getAll()\r\n    const lenght = allEntries.length\r\n\r\n    // Notice: We're manually setting the response object\r\n    // However Next.JS offers Express-like helpers :)\r\n    // https://nextjs.org/docs/api-routes/response-helpers\r\n    res.statusCode = 200\r\n    res.setHeader('Content-Type', 'application/json')\r\n    res.end(JSON.stringify({ lenght, data: allEntries }))\r\n  } catch (e) {\r\n    console.error(e)\r\n    res.statusCode = 500\r\n    res.end(\r\n      JSON.stringify({ length: 0, data: [], error: 'Something went wrong' })\r\n    )\r\n  }\r\n}\r\n\r\nexport default allAvos\r\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}
